@@ -1,0 +1,680 @@
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>수강신청</title>
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <link rel="Website Icon" href="./images/index.png" type="png">
+    
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>백석대학교 수강신청 장바구니</h2>
+    </header>
+    <nav>
+        <div class="shadowbox">
+            <h2>사용자 정보</h2>
+            <li>학번: 20191061</li>
+            <li>이름: 강병관</li>
+            <li>학년: 3학년</li>
+            <li>학부: 컴퓨터공학부</li>
+            <li>전공: 소프트웨어학</li>
+            
+        </div>
+
+        <div class="shadowbox2">
+            <h2>전공 선택</h2>
+            <input type="radio" name="major" value="soft">소프트웨어학<br>
+            <input type="radio" name="major" value="multi">멀티미디어학<br>
+            <input type="radio" name="major" value="ict">정보통신학<br>
+            <input type="radio" name="major" value="prot">정보보호학<br>
+            <input type="radio" name="major" value="ai">인공지능학<br>
+        </div>
+        <div id="major_select">
+            <h3>전공 커리큘럼 확인</h3>
+            <input type="button" onclick="openimg(1)" value="소프트웨어학 커리큘럼" class="button" /><br>
+            <input type="button" onclick="openimg(2)" value="멀티미디어학 커리큘럼" class="button" /><br>
+            <input type="button" onclick="openimg(3)" value="정보통신학 커리큘럼" class="button" /><br>
+            <input type="button" onclick="openimg(4)" value="정보보호학 커리큘럼" class="button" /><br>
+            <input type="button" onclick="openimg(5)" value="인공지능학 커리큘럼" class="button" /><br>
+            <input type="button" onclick="location.href='input.html'" value="선배들의 커리큘럼" class="button"/><br>
+        </div>
+    </nav>
+    <section>
+        <article>
+            <h3 style="text-align: center;">장바구니에 넣을 수 있는 강의</h3>
+            <div class="table_major">
+                <table id="majorsubject" border="1"> 
+                    <thead>
+                        <tr>
+                            <th>강의명</th>
+                            <th>전공</th>
+                            <th>교과군</th>
+                            <th>과목코드</th>
+                            <th>학점</th>
+                            <th>교수명</th>
+                            <th>강의실</th>
+                            <th>요일</th>
+                            <th>시작시간</th>
+                            <th>연속시간</th>
+                            <th>사이버 강의</th>
+                            <th>담기</th>
+                        </tr>
+                    </thead>
+                    <tbody id="major_check" >
+                        <tr data-subject="soft">
+                            <td>소프트웨어공학</td>
+                            <td>소프트웨어학</td>
+                            <td>심화교과군</td>
+                            <td>0138101</td>
+                            <td>3</td>
+                            <td>이승화</td>
+                            <td>본부동 511호</td>
+                            <td>월요일</td>
+                            <td>10:00</td>
+                            <td>2</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="soft">
+                            <td>이산수학</td>
+                            <td>소프트웨어학</td>
+                            <td>기초교과군</td>
+                            <td>0154701</td>
+                            <td>3</td>
+                            <td>최미영</td>
+                            <td>본부동 302호</td>
+                            <td>화요일</td>
+                            <td>10:00</td>
+                            <td>2</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>  
+                        </tr>
+                        <tr data-subject="soft">
+                            <td>컴퓨터구조론</td>
+                            <td>소프트웨어학</td>
+                            <td>심화교과군</td>
+                            <td>0245401</td>
+                            <td>3</td>
+                            <td>윤택현</td>
+                            <td>본부동 516호</td>
+                            <td>수요일</td>
+                            <td>15:00</td>
+                            <td>3</td>
+                            <td>X</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="ict">
+                            <td>3D캐릭터디자인</td>
+                            <td>AR-VR전공</td>
+                            <td>심화교과군</td>
+                            <td>0351901</td>
+                            <td>3</td>
+                            <td>김현숙</td>
+                            <td>본부동 510호</td>
+                            <td>월요일</td>
+                            <td>12:00</td>
+                            <td>3</td>
+                            <td>X</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="soft">
+                            <td>데이터베이스 이론 및 실습</td>
+                            <td>소프트웨어학</td>
+                            <td>심화교과군</td>
+                            <td>0367402</td>
+                            <td>3</td>
+                            <td>이시은</td>
+                            <td>본부동 520호</td>
+                            <td>화요일</td>
+                            <td>10:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="prot">
+                            <td>빅 데이터</td>
+                            <td>소프트웨어학</td>
+                            <td>응용교과군</td>
+                            <td>0614902</td>
+                            <td>3</td>
+                            <td>이시은</td>
+                            <td>본부동 520호</td>
+                            <td>수요일</td>
+                            <td>09:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="prot">
+                            <td>UI/UX 디자인</td>
+                            <td>AR-VR전공</td>
+                            <td>핵심교과군</td>
+                            <td>0685001</td>
+                            <td>3</td>
+                            <td>김현숙, 백순화</td>
+                            <td>본부동 509호</td>
+                            <td>화요일</td>
+                            <td>13:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="soft">
+                            <td>JSP와서블릿</td>
+                            <td>소프트웨어학</td>
+                            <td>심화교과군</td>
+                            <td>0685401</td>
+                            <td>3</td>
+                            <td>김병철</td>
+                            <td>본부동 210호</td>
+                            <td>목요일</td>
+                            <td>15:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="soft">
+                            <td>JAVA 응용 프로그래밍</td>
+                            <td>소프트웨어학</td>
+                            <td>응용교과군</td>
+                            <td>0911001</td>
+                            <td>3</td>
+                            <td>김병철</td>
+                            <td>본부동 505호</td>
+                            <td>목요일</td>
+                            <td>12:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>    
+                        </tr>
+                        <tr data-subject="soft">
+                            <td>알고리즘 및 실습</td>
+                            <td>소프트웨어학</td>
+                            <td>심화교과군</td>
+                            <td>0994202</td>
+                            <td>3</td>
+                            <td>이창은</td>
+                            <td>본부동 520호</td>
+                            <td>목요일</td>
+                            <td>13:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td> 
+                        </tr>
+                        <tr data-subject="multi">
+                            <td>웹 응용 프로그래밍</td>
+                            <td>소프트웨어학</td>
+                            <td>심화교과군</td>
+                            <td>0994301</td>
+                            <td>3</td>
+                            <td>강경우</td>
+                            <td>본부동 518호</td>
+                            <td>수요일</td>
+                            <td>15:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="multi">
+                            <td>C언어 프로그래밍</td>
+                            <td>멀티미디어학</td>
+                            <td>기초교과군 </td>
+                            <td>0367002</td>
+                            <td>3</td>
+                            <td>이승화</td>
+                            <td>본부동 519호</td>
+                            <td>수요일</td>
+                            <td>09:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td> 
+                        </tr>
+                        <tr data-subject="multi">
+                            <td>파이썬 프로그래밍</td>
+                            <td>멀티미디어학</td>
+                            <td>기초교과군</td>
+                            <td>0948104</td>
+                            <td>3</td>
+                            <td>곽노윤</td>
+                            <td>본부동 505호</td>
+                            <td>월요일</td>
+                            <td>15:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="soft">
+                            <td>자료구조론</td>
+                            <td>소프트웨어학</td>
+                            <td>핵심교과군</td>
+                            <td>0218602</td>
+                            <td>3</td>
+                            <td>이성훈</td>
+                            <td>본부동 516호</td>
+                            <td>화요일</td>
+                            <td>10:00</td>
+                            <td>2</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="soft">
+                            <td>유닉스 시스템</td>
+                            <td>소프트웨어학</td>
+                            <td>핵심교과군</td>
+                            <td>0219401</td>
+                            <td>3</td>
+                            <td>이승화</td>
+                            <td>본부동 504호</td>
+                            <td>월요일</td>
+                            <td>15:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="soft">
+                            <td>JAVA 프로그래밍</td>
+                            <td>소프트웨어학</td>
+                            <td>핵심교과군</td>
+                            <td>0367102</td>
+                            <td>3</td>
+                            <td>유진호</td>
+                            <td>본부동 504호</td>
+                            <td>목요일</td>
+                            <td>12:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="multi">
+                            <td>C++ 프로그래밍</td>
+                            <td>멀티미디어학</td>
+                            <td>핵심교과군</td>
+                            <td>0367202</td>
+                            <td>3</td>
+                            <td>이현섭</td>
+                            <td>본부동 515호</td>
+                            <td>목요일</td>
+                            <td>09:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="ai">
+                            <td>파이썬응용</td>
+                            <td>인공지능학</td>
+                            <td>핵심교과군</td>
+                            <td>0966203</td>
+                            <td>3</td>
+                            <td>홍경호</td>
+                            <td>본부동 515호</td>
+                            <td>화요일</td>
+                            <td>13:00</td>
+                            <td>4</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="ai">
+                            <td>데이터통신</td>
+                            <td>인공지능학</td>
+                            <td>심화교과군</td>
+                            <td>0118201</td>
+                            <td>3</td>
+                            <td>임석구</td>
+                            <td>본부동 516호</td>
+                            <td>월요일</td>
+                            <td>13:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>    
+                        </tr>
+                        <tr data-subject="soft">
+                            <td>운영체제론</td>
+                            <td>소프트웨어학</td>
+                            <td>심화교과군</td>
+                            <td>0218901</td>
+                            <td>3</td>
+                            <td>유진호</td>
+                            <td>본부동 318호</td>
+                            <td>화요일</td>
+                            <td>10:00</td>
+                            <td>2</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td> 
+                        </tr>
+                        <tr data-subject="soft">
+                            <td>인공지능</td>
+                            <td>소프트웨어학</td>
+                            <td>심화교과군</td>
+                            <td>0320001</td>
+                            <td>3</td>
+                            <td>이현섭</td>
+                            <td>본부동 516호</td>
+                            <td>화요일</td>
+                            <td>13:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="ai">
+                            <td>Iot응용제어</td>
+                            <td>인공지능학</td>
+                            <td>심화교과군</td>
+                            <td>0797401</td>
+                            <td>3</td>
+                            <td>임석구</td>
+                            <td>본부동 507호</td>
+                            <td>목요일</td>
+                            <td>13:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="multi">
+                            <td>캡스톤디자인</td>
+                            <td>멀티미디어학</td>
+                            <td>응용교과군</td>
+                            <td>0623901</td>
+                            <td>2</td>
+                            <td>차정희</td>
+                            <td>본부동 204호</td>
+                            <td>화요일</td>
+                            <td>09:00</td>
+                            <td>2</td>
+                            <td>X</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="soft">
+                            <td>객체지향모델링</td>
+                            <td>소프트웨어학</td>
+                            <td>응용교과군</td>
+                            <td>0524401</td>
+                            <td>3</td>
+                            <td>한정수</td>
+                            <td>본부동 506호</td>
+                            <td>목요일</td>
+                            <td>14:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                        <tr data-subject="multi">
+                            <td>딥러닝 프로그래밍</td>
+                            <td>멀티미디어학</td>
+                            <td>응용교과군</td>
+                            <td>0879501</td>
+                            <td>3</td>
+                            <td>곽노윤</td>
+                            <td>본부동 505호</td>
+                            <td>목요일</td>
+                            <td>15:00</td>
+                            <td>3</td>
+                            <td>O</td>
+                            <td>
+                                <button onclick="moveTableValues(this)">담기</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <table class="basket_subject" border="1">
+                <thead>
+                    <tr>
+                        <th>강의명</th>
+                        <th>전공</th>
+                        <th>교과군</th>
+                        <th>과목코드</th>
+                        <th>학점</th>
+                        <th>교수명</th>
+                        <th>강의실</th>
+                        <th>강의 시간</th>
+                        <th>시작 시간</th>
+                        <th>연속 시간</th>
+                        <th>사이버 강의</th>
+                        <th>취소</th>
+                    </tr>
+                </thead>
+                <tbody id="selectcredit">
+                    <!--강의 들어가는 곳-->
+                </tbody>
+            </table>
+
+        </article>
+        <label id="totalCreditLabel">담은 학점 : </label>
+    </section>
+    <aside>
+        <h3 class="cart_check">장바구니 확인</h3>
+        <div class="container">
+            <table class="timetable" border="2" width="1000" height="500">
+                <!-- <h3 class="cart_check">장바구니 확인</h3> -->
+                <thead>
+                    <tr width="540">
+                        <th>시간</th>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                </tbody>
+            </table>
+    </aside>
+    </div>
+    <script>
+        let errorMsg = true;
+        //[라디오 버튼 기능 함수]
+        // 라디오 버튼 요소 가져오기
+        const radios = document.getElementsByName('major');
+
+        // 테이블 요소 가져오기
+        const table = document.getElementById('major_check');
+
+        // 라디오 버튼 클릭 시 이벤트 핸들러 등록
+        radios.forEach(radio => {
+            radio.addEventListener('click', () => {
+                // 선택된 라디오 버튼의 값을 가져오기
+                const selectedValue = radio.value;
+
+                // 모든 행 숨기기
+                const rows = table.getElementsByTagName('tr');
+                for (let i = 0; i < rows.length; i++) {
+                    rows[i].style.display = 'none';
+                }
+
+                // 선택된 과목의 행만 보이도록 설정
+                const selectedRows = table.querySelectorAll(`[data-subject="${selectedValue}"]`);
+                for (let i = 0; i < selectedRows.length; i++) {
+                    selectedRows[i].style.display = '';
+                }
+            });
+        });
+
+        // [장바구니 추가 삭제 함수]
+        function moveTableValues(button) {
+            if (errorMsg) {
+                // 버튼이 속한 행을 선택
+                const selectRow = button.closest("tr");
+                // 중복 체크를 위해 강의명과 담당교수를 가져옴
+                const subjectName = selectRow.querySelector("td:nth-child(1)").textContent;
+                const professor = selectRow.querySelector("td:nth-child(6)").textContent;
+                // 해당 강의가 이미 추가되어 있는지 확인
+                const selectedTableBody = document.querySelector(".basket_subject tbody");
+                const overlap = Array.from(selectedTableBody.querySelectorAll("tr"))
+                    .some(row => row.querySelector("td:nth-child(1)").textContent === subjectName
+                        && row.querySelector("td:nth-child(6)").textContent === professor);
+                // 중복되지 않은 경우에만 새로운 행을 추가
+                if (!overlap) {
+                    // 해당 행을 복제하여 새로운 행 생성
+                    const newRow = selectRow.cloneNode(true);
+                    // 복사 버튼을 삭제 버튼으로 변경
+                    newRow.querySelector("button").innerText = "삭제";
+                    newRow.querySelector("button").onclick = function () {
+                        newRow.remove();
+                        errorMsg = true
+                        updateTimetable();
+                        calculateTotalCalories()
+                    };
+                    // 두 번째 테이블의 tbody에 새로운 행 추가
+                    selectedTableBody.appendChild(newRow);
+                    updateTimetable();
+                    calculateTotalCredit();
+                }
+                else {
+                    alert('이미 장바구니에 담았습니다.');
+                }
+            }
+            return;
+        }
+
+
+        function updateTimetable() {
+            const timetableBody = document.querySelector(".timetable tbody");
+            // 기존 시간표 지우기
+            timetableBody.innerHTML = '';
+
+            const selectedTableRows = Array.from(document.querySelectorAll(".basket_subject tbody tr"));
+
+            // 시간 종류 배열
+            const timeSlots = [
+                "09:00",
+                "10:00",
+                "11:00",
+                "12:00",
+                "13:00",
+                "14:00",
+                "15:00",
+                "16:00",
+                "17:00",
+                "18:00",
+            ]; 
+
+            // 시간표 테이블 만들어지는 코드
+            for (let i = 0; i < timeSlots.length; i++) {
+                const timeSlot = timeSlots[i];
+                const row = document.createElement("tr");
+
+                const timeCell = document.createElement("td");
+                timeCell.textContent = timeSlot;
+                row.appendChild(timeCell);
+
+                const days = ["월요일", "화요일", "수요일", "목요일", "금요일"];
+                for (let j = 0; j < days.length; j++) {
+                    const day = days[j];
+                    const cell = document.createElement("td");
+                    -
+                        selectedTableRows.forEach(selectedRow => {
+                            const subject = selectedRow.querySelector("td:nth-child(1)").textContent;
+                            const professor = selectedRow.querySelector("td:nth-child(6)").textContent;
+                            const start = selectedRow.querySelector("td:nth-child(9)").textContent;
+                            const duration = parseInt(selectedRow.querySelector("td:nth-child(10)").textContent);
+
+                            if (selectedRow.querySelector("td:nth-child(8)").textContent === day) {
+                                const startTimeIndex = timeSlots.indexOf(start);
+                                const endTimeIndex = startTimeIndex + duration - 1;
+
+                                if (startTimeIndex <= i && i <= endTimeIndex) {
+                                    if (startTimeIndex === i) {
+                                        cell.innerHTML = subject + "<br>" + professor;
+                                        cell.rowSpan = duration;
+                                    } else {
+                                        cell.style.display = 'none';
+                                    }
+                                }
+                            }
+                        });
+
+                    row.appendChild(cell);
+                }
+
+                timetableBody.appendChild(row);
+            }
+        }
+        // 학점 합계 계산 및 출력
+        function calculateTotalCredit() {
+            const selectedRows = document.querySelectorAll("#selectcredit tr");
+            let totalCredit = 0;
+            for (let i = 0; i < selectedRows.length; i++) {
+                const Credit = parseInt(selectedRows[i].querySelector("td:nth-child(5)").textContent);
+                totalCredit += Credit;
+                if (totalCredit >= 15) {
+                    alert("15학점 최대입니다 이제 더이상 담을 수 없습니다..");
+                    errorMsg = false
+                    break;
+                }
+
+            }
+
+            const totalCreditLabel = document.getElementById("totalCreditLabel");
+            totalCreditLabel.textContent = "담은 학점 : " + totalCredit + ' 학점';
+        }
+
+        //[커리큘럼 팝업 사진]
+        function openimg(num) {
+            window.open("./images/" + num + ".png", "_blank", "width=500, height=500");
+            
+        }
+
+    </script>
+
+
+</body>
+
+</html>
